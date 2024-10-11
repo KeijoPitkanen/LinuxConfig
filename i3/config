@@ -11,7 +11,7 @@
 
 # Ubuntu Systems
 #
-# sudo apt install xorg  i3status i3blocks feh materia-gtk-theme papirus-icon-theme fonts-font-awesome icom xclip maim rofi
+# sudo apt install xorg  i3status i3blocks feh materia-gtk-theme papirus-icon-theme fonts-font-awesome icom xclip maim rofi picom
 #
 # get custom repository for i3-wm
 # $ /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb keyring.deb SHA256:f9bb4340b5ce0ded29b7e014ee9ce788006e9bbfe31e96c09b2118ab91fca734

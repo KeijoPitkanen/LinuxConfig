@@ -5,9 +5,15 @@ These configs use some specific properties like monitor names etc. so it will ne
 
 
 Included configs:
+
 1.i3
+
 2.Kitty
+
 3.Lightdm
+
 4.Neovim
+
 5.rofi
+
 6.Software Install script (Arch)

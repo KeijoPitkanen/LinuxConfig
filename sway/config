@@ -6,45 +6,29 @@
 #
 # Arch Systems
 #
-# sudo pacman -S sway swaylock swayidle swaybg kitty rofi-wayland
+# sudo pacman -S sway swaylock swayidle swaybg kitty rofi-wayland dunst
 #
 #
-# get custom repository for i3-wm
-# $ /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb keyring.deb SHA256:f9bb4340b5ce0ded29b7e014ee9ce788006e9bbfe31e96c09b2118ab91fca734
-# $ sudo apt install ./keyring.deb
-# $ echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
-# $ sudo apt update
-# $ sudo apt install i3-wm
-#
-# Builds
-# https://github.com/Raymo111/i3lock-color
-# https://github.com/neovim/neovim
-
-
-# This config was made for an Arch system but it should work just fine on popOs and other similar distros
+# This config was made for an Arch system
 # ~TheKeijo
 
 set $mod Mod4
 
-###############################################################################################################
-################################ Sway #########################################################################
-###############################################################################################################
 #Set Keyboard layout
 input * {
     xkb_layout "fi"
 }
-
 ###############################################################################################################
 ###################################### WORKSPACES #############################################################
 ###############################################################################################################
 
 # Set names to workspaces
 set $ws1 "1: Terminal"
-set $ws2 "2: Firefox"
-set $ws3 "3: Firefox"
+set $ws2 "2: Browser"
+set $ws3 "3: Browser"
 set $ws4 "4: Code"
 set $ws5 "5: Steam"
-set $ws6 "6: Spotify/Firefox" 
+set $ws6 "6: Spotify/ Browser" 
 set $ws7 "7: Whatsapp"
 set $ws8 "8: File Browser"
 set $ws9 "9: "
@@ -60,7 +44,6 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-
 #set worksapaces for the correct monitors
 workspace $ws1 output DP-1
 workspace $ws2 output DP-1
@@ -71,41 +54,24 @@ workspace $ws6 output HDMI-A-1
 workspace $ws7 output HDMI-A-1
 workspace $ws8 output HDMI-A-1
 # Allocate applications to workspaces
-assign [app_id="Spotify"] workspace $ws6
 assign [class="steam"]  workspace $ws5
 assign [app_id="com.ktechpit.whatsie"]  workspace $ws7
-
 
 ###############################################################################################################
 ################################ EXECUTIONS AT START ##########################################################
 ###############################################################################################################
-
-# Start XDG autostart .desktop files using dex. See also
-exec --no-startup-id dex --autostart --environment i3
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-# Display Wallpaper
-exec_always feh --bg-fill /home/$USER/Pictures/Wallpapers/Hazbin-Hotel-angel-dust1.webp
 # Notifications via dunst
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc 
-# Transperency with picom compositor
-exec_always picom -f
 # Disable screensaver
 exec --no-startup-id xset s off -dpms
-
+# On login start programs
 exec_always --no-startup-id swaymsg "workspace $ws1; exec kitty"
-
-
 
 ###############################################################################################################
 ############################## WINDOW CONTROLS ################################################################
@@ -166,38 +132,24 @@ mode "resize" {
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
-
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
 ###############################################################################################################
-############################## MONITORS ################################################################
+##################################### MONITORS ################################################################
 ###############################################################################################################
 output DP-1 pos 1920 0 res 2560x1440
 output HDMI-A-1 pos 0 0 res 1920x1080
 output HDMI-A-2 disable
 #set Wallpaper
-output * bg /home/skula/Pictures/Wallpapers/hazbin-hotel-alastor-red-desktop-wallpaper-preview.jpg fill
-
-
-###############################################################################################################
-###################################### I3 CONTROLS ############################################################
-###############################################################################################################
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+output * bg /home/skula/Pictures/Wallpapers/White-fizzarolli.jpg fill
 
 ###############################################################################################################
 ###################################### WORKSPACE BAR ##########################################################
@@ -245,12 +197,16 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip
 
 # Shortcut for Lockscreen
 bindsym $mod+Escape exec /home/$USER/.config/scripts/lock
-# Key bindings for Media control keys
+### Key bindings for Media control keys
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
+###Sway controls
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# exit sway
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 ###############################################################################################################
 ###################################### COLORS AND GAPS ########################################################
 ###############################################################################################################

@@ -10,5 +10,6 @@ Included configs:
 3. neovim text editor {./nvim/}
 4. rofi application launcher {./rofi/}
 5. sway window manager {./sway/, ./swaylock/}
+6. greetd login manager {./greetd/}
 
 Also includes software install script for arch and arch based systems {./software-install-script-arch.sh}

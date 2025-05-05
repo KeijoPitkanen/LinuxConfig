@@ -28,7 +28,8 @@ echo installing telegram-desktop messaging app
 echo installing thunderbird email client
 echo installing vlc media player
 echo installing spotify-launcher web music player
-sudo pacman -S spotify-launcher bleachbit fzf gedit greetd jellyfin-server jellyfin-web kitty krita neovim nwg-hello obs-studio qbittorrent ranger speedcrunch steam telegram-desktop thunderbird vlc w3w
+echo installing fastfetch terminal system info tool
+sudo pacman -S fastfetch spotify-launcher bleachbit fzf gedit greetd jellyfin-server jellyfin-web kitty krita neovim nwg-hello obs-studio qbittorrent ranger speedcrunch steam telegram-desktop thunderbird vlc w3w
 
 echo switching to use greetd login manager
 sudo pacman systemctl enable greetd.service

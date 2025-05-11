@@ -1,0 +1,55 @@
+* {
+  font-size: 13px;
+  font-family: "Terminus (TTF)";
+}
+
+window#waybar {
+  background: transparent;
+  color: #ffffff;
+}
+
+#clock,
+#custom-media,
+#pulseaudio,
+#network,
+#workspaces button {
+  background-color: #ffc4d6;
+  opacity: 0.7;
+  color: black;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+#custom-media {
+  border-radius: 15px;
+  margin-left: 8px;
+}
+
+#pulseaudio {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-right: 8px;
+}
+
+#network {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+#workspaces button {
+  margin-left: 5px;
+  border-radius: 15px;
+}
+
+#workspaces button.visible {
+  background-color: #ffdee8;
+  opacity: 1;
+}
+
+#workspaces button.urgent {
+  background-color: #c9545d;
+}

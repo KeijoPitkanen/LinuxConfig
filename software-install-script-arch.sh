@@ -18,7 +18,6 @@ echo installing jellyfin-web media server web interface
 echo installing kitty terminal emulator
 echo installing krita digital painting software
 echo installing neovim text editor
-echo installing nwg-hello greetd greeter
 echo installing obs-studio streaming and recording software
 echo installing qbittorrent torrent client
 echo installing ranger terminal file browser
@@ -29,14 +28,10 @@ echo installing thunderbird email client
 echo installing vlc media player
 echo installing spotify-launcher web music player
 echo installing fastfetch terminal system info tool
-sudo pacman -S fastfetch spotify-launcher bleachbit fzf gedit greetd jellyfin-server jellyfin-web kitty krita neovim nwg-hello obs-studio qbittorrent ranger speedcrunch steam telegram-desktop thunderbird vlc w3w
-
-echo switching to use greetd login manager
-sudo pacman systemctl enable greetd.service
+sudo pacman -S fastfetch spotify-launcher bleachbit fzf gedit greetd jellyfin-server jellyfin-web kitty krita neovim obs-studio qbittorrent ranger speedcrunch steam telegram-desktop thunderbird vlc w3w
 
 echo installing tools from yay
 yay -S vscodium mission-center popsicle whatsie waterfox-bin
 
 echo Software installed
-echo -e "\n please remember to copy the greetd config file to /etc/greetd/ \n"
 echo ending script

@@ -4,6 +4,7 @@ declare -A packages=(
   [fastfetch]="terminal system info tool"
   [fzf]="fuzzy finder"
   [gedit]="text editor"
+  [gnome]="desktop environment"
   [jellyfin-server]="media server"
   [jellyfin-web]="media server web interface"
   [kitty]="terminal emulator"
@@ -15,14 +16,16 @@ declare -A packages=(
   [speedcrunch]="calculator"
   [spotify-launcher]="web music player"
   [steam]="video game platform"
+  [sway]="window mangager"
   [telegram-desktop]="messaging app"
   [thunderbird]="email client"
   [vlc]="media player"
-  [w3w]="3w3 for picture previews inside ranger"
+  [w3m]="3w3 for picture previews inside ranger"
 )
 
 declare -A yay_packages=(
   [mission-center]="system monitor utility"
+  [onlyoffice]="office suite"
   [popsicle]="USB flashing tool"
   [vscodium]="open-source Visual Studio Code alternative"
   [waterfox-bin]="privacy-focused web browser"

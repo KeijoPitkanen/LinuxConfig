@@ -30,6 +30,7 @@ declare -A yay_packages=(
   [vscodium]="open-source Visual Studio Code alternative"
   [waterfox - bin]="privacy-focused web browser"
   [whatsie]="WhatsApp desktop client"
+  [extension - manager]="3rd party software for installing gnome extenssions"
 )
 
 echo Updating Pacman

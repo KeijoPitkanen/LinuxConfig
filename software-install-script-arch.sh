@@ -21,6 +21,10 @@ declare -A packages=(
   [thunderbird]="email client"
   [vlc]="media player"
   [w3m]="3w3 for picture previews inside ranger"
+  [rofi]="application opener for sway"
+  [playerctl]="terminal tool for sound control"
+  [pulsemixer]="terminal mixer"
+  [waybar]="bar for sway window mangager"
 )
 
 declare -A yay_packages=(
@@ -30,6 +34,8 @@ declare -A yay_packages=(
   [vscodium]="open-source Visual Studio Code alternative"
   [waterfox - bin]="privacy-focused web browser"
   [whatsie]="WhatsApp desktop client"
+  [swaylock]="lock for sway window manager"
+  [sway - screenshot]="screenshot tool for sway"
   [extension - manager]="3rd party software for installing gnome extenssions"
 )
 

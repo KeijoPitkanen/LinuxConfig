@@ -1,37 +1,70 @@
+declare -A packages=(
+  [bleachbit]="system cleaner"
+  [calcurse]="terminal calendar"
+  [fastfetch]="terminal system info tool"
+  [fzf]="fuzzy finder"
+  [gedit]="text editor"
+  [jellyfin-server]="media server"
+  [jellyfin-web]="media server web interface"
+  [kitty]="terminal emulator"
+  [krita]="digital painting software"
+  [neovim]="text editor"
+  [obs-studio]="streaming and recording software"
+  [qbittorrent]="torrent client"
+  [ranger]="terminal file browser"
+  [speedcrunch]="calculator"
+  [spotify-launcher]="web music player"
+  [steam]="video game platform"
+  [telegram-desktop]="messaging app"
+  [thunderbird]="email client"
+  [vlc]="media player"
+  [w3w]="3w3 for picture previews inside ranger"
+)
+
+declare -A yay_packages=(
+  [mission-center]="system monitor utility"
+  [popsicle]="USB flashing tool"
+  [vscodium]="open-source Visual Studio Code alternative"
+  [waterfox-bin]="privacy-focused web browser"
+  [whatsie]="WhatsApp desktop client"
+)
+
 echo Updating Pacman
 sudo pacman -Syyu
 
-echo Installing yay
-sudo pacman -S --needed base-devel git
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-yay --version
+read -p "Do you want to install yay AUR helper? (y/n) " response
+if [[ "$response" == [Yy] ]]; then
+  echo "Installing yay..."
+  sudo pacman -S --needed base-devel git
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si
+  yay --version
+else
+  echo "Skipped yay installation."
+fi
 
-echo installing tools from pacman
-echo installing 3w3 for picture previews inside ranger
-echo installing bleachbit system cleaner
-echo installing fzf fuzzy finder
-echo installing gedit text editor
-echo installing jellyfin-server media server
-echo installing jellyfin-web media server web interface
-echo installing kitty terminal emulator
-echo installing krita digital painting software
-echo installing neovim text editor
-echo installing obs-studio streaming and recording software
-echo installing qbittorrent torrent client
-echo installing ranger terminal file browser
-echo installing speedcrunch calculator
-echo installing steam video game platform
-echo installing telegram-desktop messaging app
-echo installing thunderbird email client
-echo installing vlc media player
-echo installing spotify-launcher web music player
-echo installing fastfetch terminal system info tool
-sudo pacman -S fastfetch spotify-launcher bleachbit fzf gedit greetd jellyfin-server jellyfin-web kitty krita neovim obs-studio qbittorrent ranger speedcrunch steam telegram-desktop thunderbird vlc w3w
+echo "Installing tools from pacman..."
+for pkg in "${!packages[@]}"; do
+  echo
+  read -p "Install $pkg: ${packages[$pkg]}? (y/n) " answer
+  if [[ "$answer" == [Yy] ]]; then
+    sudo pacman -S --noconfirm "$pkg"
+  else
+    echo "Skipping $pkg"
+  fi
+done
 
-echo installing tools from yay
-yay -S vscodium mission-center popsicle whatsie waterfox-bin
+echo "Installing tools from yay..."
+for pkg in "${!yay_packages[@]}"; do
+  echo
+  read -p "Install $pkg: ${yay_packages[$pkg]}? (y/n) " answer
+  if [[ "$answer" == [Yy] ]]; then
+    yay -S --noconfirm "$pkg"
+  else
+    echo "Skipping $pkg"
+  fi
+done
 
 echo Software installed
 echo ending script

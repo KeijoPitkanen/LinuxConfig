@@ -77,7 +77,9 @@ for app in "${!flatpaks[@]}"; do
 done
 
 echo deleting unused default apps
-sudo apt purge geary libreoffice-core
+sudo apt purge geary libreoffice-core libreoffice-base-core libreoffice-common totem seahorse foot
+
+sudo apt autoremove
 
 
 echo Software installed

@@ -76,5 +76,9 @@ for app in "${!flatpaks[@]}"; do
   fi
 done
 
+echo deleting unused default apps
+sudo apt purge geary libreoffice-core
+
+
 echo Software installed
 echo ending script

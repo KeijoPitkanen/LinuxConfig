@@ -24,6 +24,7 @@ declare -A packages=(
   [rofi]="application opener for sway"
   [playerctl]="terminal tool for sound control"
   [pulsemixer]="terminal mixer"
+  [wl - clipboard]="adds system clipboard compatability with neovim"
   [waybar]="bar for sway window mangager"
 )
 

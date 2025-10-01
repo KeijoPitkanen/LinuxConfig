@@ -161,7 +161,8 @@ output * background /home/skula/Pictures/Wallpapers/Red-alistor.jpg fill
 ############################################ SHORTCUTS ########################################################
 ###############################################################################################################
 # Lauch rofihttps://github.com/search?q=repo%3Aswaywm%2Fswaylock++language%3AMeson&type=code
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+d exec rofi --show drun
+bindsym $mod+p exec rofi --show window
 # start a terminal
 bindsym $mod+Return exec kitty
 #  Screenshots in files

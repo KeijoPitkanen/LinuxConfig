@@ -1,60 +1,69 @@
 {
   "layer": "top",
   "position": "bottom",
-  "modules-left": [
-    "custom/media"
-  ],
-  "modules-center": [
-    "sway/workspaces"
-  ],
-  "modules-right": [
-    "network",
-    "clock#date",
-    "clock#time",
-    "pulseaudio"
-  ],
-  "clock#time": {
-    "interval": 1,
-    "format": "{:%H:%M:%S}",
-    "tooltip": false
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  /* === Modules Order === */
+  "modules-left": ["clock", "custom/media"],
+  "modules-center": ["sway/workspaces"],
+  "modules-right": ["wlr/taskbar", "pulseaudio", "cpu", "memory", "network"],
+  /* === Modules Left === */
+
+  "clock": {
+    "format": "{:%H:%M %d.%m.%Y}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month",
+    },
   },
-  "clock#date": {
-    "interval": 10,
-    "format": "  {:%d %m %Y}", // Icon: calendar-alt
-    "tooltip-format": "{:%e %B %Y}"
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true,
+    "tooltip-format": "CPU usage: {usage}%\nNúcleos: {cores}",
+  },
+  "memory": {
+    "format": "{}% 󰍛",
+    "tooltip": true,
+    "tooltip-format": "RAM used: {used} / {total} ({percentage}%)",
+  },
+  /* === Modules Center === */
+  "sway/workspaces": {
+    "all-outputs": false,
+    "format": "{name}",
+  },
+  /* === Modules Right === */
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "active-first": true,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": ["rofi"],
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": " {format_source}",
+    "format-icons": {
+      "default": ["", ""],
+    },
+    "on-click": "pavucontrol",
   },
   "network": {
     "format": "{ifname}",
     "format-wifi": "  WIFI connection",
-    "format-ethernet": "  Wired connection",
+    "format-ethernet": "󰈀  Wired connection",
     "format-disconnected": "⚠  Disconnected",
     "tooltip-format-wifi": "{signalStrength}%",
-    "max-length": 20
+    "max-length": 20,
   },
   "custom/media": {
     "format": "{}",
-    "interval": 1,
-    "exec": "$HOME/.config/waybar/get_media.sh"
+    "interval": 3,
+    "exec": "$HOME/.config/waybar/get_media.sh",
+    "max-length": 70,
   },
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}%",
-    "format-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "  "
-      ]
-    },
-    "on-click": "pavucontrol"
-  },
-  "sway/workspaces": {
-    "all-outputs": false,
-    "format": "{name}"
-  }
 }

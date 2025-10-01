@@ -1,55 +1,149 @@
+/* -- Global rules -- */
 * {
-  font-size: 13px;
-  font-family: "Terminus (TTF)";
+  border: none;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 15px;
+  min-height: 10px;
 }
 
 window#waybar {
-  background: transparent;
-  color: #ffffff;
+  background: rgba(34, 36, 54, 0.4);
 }
 
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/* - Genera rules for visible modules -- */
 #clock,
-#custom-media,
+#cpu,
+#memory,
 #pulseaudio,
-#network,
-#workspaces button {
-  background-color: #ffc4d6;
+#custom-media,
+#network {
+  color: #161320;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: none;
+}
+
+/* -- Specific styles -- */
+
+/* Modules left */
+#clock {
+  background: rgba(88, 175, 221, 0.8);
+  margin-right: 5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#cpu {
+  background: rgba(88, 175, 221, 0.8);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#custom-media {
+  background-color: rgba(0, 166, 255, 0.8);
   opacity: 0.7;
   color: black;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-bottom: 8px;
-  font-size: 12px;
+  margin-left: 10px;
+  border-radius: 10px;
 }
-
-#custom-media {
-  border-radius: 15px;
-  margin-left: 8px;
+#memory {
+  background: rgba(63, 126, 161, 0.8);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 #pulseaudio {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  margin-right: 8px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+#disk {
+  background: #f5c2e7;
 }
 
-#network {
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+#temperature {
+  background: #f8bd96;
+}
+
+/* Modules center */
+#workspaces {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin: 6px 5px;
+  padding: 0px 6px;
 }
 
 #workspaces button {
-  margin-left: 5px;
-  border-radius: 15px;
+  color: #b5e8e0;
+  background: transparent;
+  padding: 4px 4px;
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+#workspaces button.occupied {
+  color: #a6e3a1;
 }
 
 #workspaces button.visible {
-  background-color: #ffdee8;
-  opacity: 1;
+  color: #438bff;
+  text-shadow: 0 0 10px #abe9b3;
 }
 
-#workspaces button.urgent {
-  background-color: #c9545d;
+#workspaces button:hover {
+  color: #89b4fa;
+}
+
+/* Modules right */
+#taskbar {
+  background: transparent;
+  border-radius: 10px;
+  padding: 0px 5px;
+  margin: 6px 5px;
+}
+
+#taskbar button {
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+#taskbar button.active {
+  background: rgba(34, 36, 54, 0.5);
+}
+
+#taskbar button:hover {
+  background: rgba(34, 36, 54, 0.5);
+}
+
+#pulseaudio {
+  color: #1a1826;
+  background: rgba(0, 166, 255, 0.8);
+}
+
+#pulseaudio_slider {
+  color: #1a1826;
+  background: rgba(0, 166, 255, 0.8);
+}
+
+#network {
+  background: rgba(0, 166, 255, 0.8);
+  padding-right: 13px;
+  margin-left: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+/* === Optional animation === */
+@keyframes blink {
+  to {
+    background-color: #bf616a;
+    color: #b5e8e0;
+  }
 }

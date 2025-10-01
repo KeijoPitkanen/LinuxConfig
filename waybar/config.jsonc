@@ -64,6 +64,6 @@
     "format": "{}",
     "interval": 3,
     "exec": "$HOME/.config/waybar/get_media.sh",
-    "max-length": 70,
+    "max-length": 60,
   },
 }

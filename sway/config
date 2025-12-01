@@ -6,7 +6,7 @@
 # Do note that some of these configs are hard coded for my specific computer
 #
 # Arch Systems
-# sudo pacman -S swaybg playerctl waybar sway swaylock swayidle swaybg kitty rofi-wayland dunst
+# sudo pacman -S swaybg playerctl waybar sway swaylock swayidle swaybg kitty rofi dunst
 # yay -S sway-screenshot
 #
 # This config was made for an Arch system
@@ -24,16 +24,16 @@ input * {
 ###############################################################################################################
 
 # Set names to workspaces
-set $ws1 "1:1    Terminal"
-set $ws2 "2:2    Browser"
-set $ws3 "3:3    Browser"
-set $ws4 "4:4    Code"
-set $ws5 "5:5    Steam"
-set $ws6 "6:6    Spotify/   Browser" 
-set $ws7 "7:7    Whatsapp"
-set $ws8 "8:8    File Browser"
-set $ws9 "9:9   "
-set $ws10 "10:9   "
+set $ws1 "1:1  Terminal "
+set $ws2 "2:2  Browser "
+set $ws3 "3:3  Browser "
+set $ws4 "4:4  Code "
+set $ws5 "5:5  Steam "
+set $ws6 "6:6  Spotify/ Browser " 
+set $ws7 "7:7  Whatsapp "
+set $ws8 "8:8  File Browser "
+set $ws9 "9:9  Util"
+set $ws10 "10:9  Util 2"
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -50,10 +50,10 @@ workspace $ws1 output DP-1
 workspace $ws2 output DP-1
 workspace $ws3 output DP-1
 workspace $ws4 output DP-1
-workspace $ws5 output HDMI-A-2
-workspace $ws6 output HDMI-A-2
-workspace $ws7 output HDMI-A-2
-workspace $ws8 output HDMI-A-2
+workspace $ws5 output HDMI-A-1
+workspace $ws6 output HDMI-A-1
+workspace $ws7 output HDMI-A-1
+workspace $ws8 output HDMI-A-1
 # Allocate applications to workspaces
 assign [class="privateinternetaccess"] workspace $ws1
 assign [class="pio.missioncenter.MissionCenter"] workspace $ws1
@@ -124,6 +124,7 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -152,20 +153,21 @@ mode "resize" {
 
 #Set monitors <!!! this is system specific !!!>
 output DP-1 pos 1920 0 res 2560x1440
-output HDMI-A-2 pos 0 0 res 1920x1080
+output HDMI-A-1 pos 0 0 res 1920x1080
 #mirror this mothafucka
-output HDMI-A-1 disable
-output * background /home/skula/Pictures/Wallpapers/Red-alistor.jpg fill
+output HDMI-A-2 disable
+output * background /home/skula/Pictures/Wallpapers/blue-anime-ocean.png fill
 
 ###############################################################################################################
 ############################################ SHORTCUTS ########################################################
 ###############################################################################################################
-# Lauch rofihttps://github.com/search?q=repo%3Aswaywm%2Fswaylock++language%3AMeson&type=code
-bindsym $mod+d exec rofi --show drun
-bindsym $mod+p exec rofi --show window
+# Lauch rofi
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+Space exec --no-startup-id rofi -show window -show-icons
 # start a terminal
 bindsym $mod+Return exec kitty
 #  Screenshots in files
+set $SWAY_SCREENSHOT_DIR /home/skula/Pictures/Screenshots
 bindsym Print exec sway-screenshot -m region;
 #Shortcut for Lockscreen
 bindsym $mod+Escape exec swaylock 
@@ -196,14 +198,14 @@ font pango:Ubuntu Regular 13
 gaps inner 5 
 gaps outer 1
 # Color shemes for windows 
-set $bgcolor	#ffffff33
-set $in-bgcolor #ffffff33
+set $bgcolor	#113755cc
+set $in-bgcolor #58afddcc 
 set $text	#ffffff
-set $u-bgcolor	#ffb8727a
-set $indicator	#ffb8727a
-set $in-text	#ffffff9D
-set $focused-ws	#ffffff4d
-set $bar-color	#ffffff1a
+set $u-bgcolor	#113755cc
+set $indicator	#113755
+set $in-text	#113755
+set $focused-ws	#1b5886
+set $bar-color	#1b5886
 #			border		background	text		indicator (a line which shows where the next window will be placed)	
 client.focused		$bgcolor	$bgcolor	$text		$indicator
 client.unfocused	$in-bgcolor	$in-bgcolor	$in-text	$in-bgcolor

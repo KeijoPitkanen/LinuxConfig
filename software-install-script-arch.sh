@@ -5,7 +5,6 @@ declare -A packages=(
   [fzf]="fuzzy finder"
   [gedit]="text editor"
   [gnome]="desktop environment"
-  [jellyfin-server]="media server"
   [jellyfin-web]="media server web interface"
   [kitty]="terminal emulator"
   [krita]="digital painting software"

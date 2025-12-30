@@ -9,6 +9,7 @@ declare -A packages=(
   [kitty]="terminal emulator"
   [krita]="digital painting software"
   [neovim]="text editor"
+  [nerd-fonts]="common special characters"
   [obs-studio]="streaming and recording software"
   [qbittorrent]="torrent client"
   [ranger]="terminal file browser"

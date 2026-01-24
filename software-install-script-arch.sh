@@ -1,6 +1,7 @@
 declare -A packages=(
   [bleachbit]="system cleaner"
   [calcurse]="terminal calendar"
+  [clamav]="Anti virus software"
   [fastfetch]="terminal system info tool"
   [fzf]="fuzzy finder"
   [gedit]="text editor"

@@ -7,7 +7,7 @@ declare -A packages=(
   [gedit]="text editor"
   [discord]="communication platform"
   [gnome]="desktop environment"
-  [jellyfin - web]="media server web interface"
+  [jellyfin-web]="media server web interface"
   [kitty]="terminal emulator"
   [krita]="digital painting software"
   [neovim]="text editor"
@@ -16,10 +16,10 @@ declare -A packages=(
   [qbittorrent]="torrent client"
   [ranger]="terminal file browser"
   [speedcrunch]="calculator"
-  [spotify - launcher]="web music player"
+  [spotify-launcher]="web music player"
   [steam]="video game platform"
   [swaybg]="wallpaper handler for sway"
-  [telegram - desktop]="messaging app"
+  [telegram-desktop]="messaging app"
   [thunderbird]="email client"
   [vlc]="media player"
   [w3m]="3w3 for picture previews inside ranger"
@@ -34,15 +34,15 @@ declare -A packages=(
 )
 
 declare -A yay_packages=(
-  [mission - center]="system monitor utility"
-  [onlyoffice - bin]="office suite"
+  [mission-center]="system monitor utility"
+  [onlyoffice-bin]="office suite"
   [popsicle]="USB flashing tool"
   [swayfx]="window mangager"
   [vscodium]="open-source Visual Studio Code alternative"
   [whatsie]="WhatsApp desktop client"
   [swaylock]="lock for sway window manager"
-  [sway - screenshot]="screenshot tool for sway"
-  [extension - manager]="3rd party software for installing gnome extenssions"
+  [sway-screenshot]="screenshot tool for sway"
+  [extension-manager]="3rd party software for installing gnome extenssions"
 )
 
 echo Updating Pacman

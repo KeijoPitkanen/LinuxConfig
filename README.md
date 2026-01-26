@@ -5,11 +5,9 @@ These configs use some specific properties like monitor names etc. so it will ne
 
 Included configs:
 
-1. i3 window manager {./i3, ./i3blocks/, ./i3status/, ./scripts/}
-2. kitty terminal emulator {./kitty/}
-3. neovim text editor {./nvim/}
-4. rofi application launcher {./rofi/}
-5. sway window manager {./sway/, ./swaylock/}
-6. greetd login manager {./greetd/}
+1. kitty terminal emulator {./kitty/}
+2. neovim text editor {./nvim/}
+3. rofi application launcher {./rofi/}
+4. sway window manager {./sway/, ./swaylock/}
 
 Also includes software install script for arch and arch based systems {./software-install-script-arch.sh}

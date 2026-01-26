@@ -6,6 +6,7 @@ declare -A packages=(
   [fzf]="fuzzy finder"
   [gedit]="text editor"
   [discord]="communication platform"
+  [gedit]="Sway notifications handler"
   [gnome]="desktop environment"
   [jellyfin-web]="media server web interface"
   [kitty]="terminal emulator"

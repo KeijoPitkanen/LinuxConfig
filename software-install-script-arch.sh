@@ -11,8 +11,8 @@ declare -A packages=(
   [kitty]="terminal emulator"
   [krita]="digital painting software"
   [neovim]="text editor"
-  [nerd - fonts]="common special characters"
-  [obs - studio]="streaming and recording software"
+  [nerd-fonts]="common special characters"
+  [obs-studio]="streaming and recording software"
   [qbittorrent]="torrent client"
   [ranger]="terminal file browser"
   [speedcrunch]="calculator"
@@ -26,11 +26,11 @@ declare -A packages=(
   [rofi]="application opener for sway"
   [playerctl]="terminal tool for sound control"
   [pulsemixer]="terminal mixer"
-  [vlc - plugin - ffmpeg]="Adds support for different file formats for vlc"
-  [wl - clipboard]="adds system clipboard compatability with neovim"
+  [vlc-plugin-ffmpeg]="Adds support for different file formats for vlc"
+  [wl-clipboard]="adds system clipboard compatability with neovim"
   [waybar]="bar for sway window mangager"
   [btop]="terminal system monitor"
-  [rocm - smi - lib]="dependency for btop amd gpu monitoring"
+  [rocm-smi-lib]="dependency for btop amd gpu monitoring"
 )
 
 declare -A yay_packages=(

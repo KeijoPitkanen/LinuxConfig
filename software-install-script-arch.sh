@@ -18,6 +18,7 @@ declare -A packages=(
   [speedcrunch]="calculator"
   [spotify - launcher]="web music player"
   [steam]="video game platform"
+  [swaybg]="wallpaper handler for sway"
   [telegram - desktop]="messaging app"
   [thunderbird]="email client"
   [vlc]="media player"

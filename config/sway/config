@@ -77,8 +77,8 @@ exec --no-startup-id xset s off -dpms
 # On login start programs
 exec_always --no-startup-id swaymsg  exec kitty
 exec_always --no-startup-id /opt/piavpn/bin/pia-client
-exec_always --no-startup-id swaymsg exec steam 
-exec_always --no-startup-id swaymsg exec spotify-launcher 
+exec_always --no-startup-id swaymsg exec steam
+exec_always --no-startup-id swaymsg exec spotify
 
 ###############################################################################################################
 ############################## WINDOW CONTROLS ################################################################

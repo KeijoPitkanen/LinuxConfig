@@ -16,6 +16,7 @@ declare -A packages=(
   [obs-studio]="streaming and recording software"
   [qbittorrent]="torrent client"
   [ranger]="terminal file browser"
+  [rust]="rustc compiler and cargo"
   [speedcrunch]="calculator"
   [spotify-launcher]="web music player"
   [steam]="video game platform"
@@ -35,6 +36,7 @@ declare -A packages=(
 )
 
 declare -A yay_packages=(
+  [extension-manager]="3rd party software for installing gnome extenssions"
   [mission-center]="system monitor utility"
   [onlyoffice-bin]="office suite"
   [popsicle]="USB flashing tool"
@@ -43,7 +45,7 @@ declare -A yay_packages=(
   [whatsie]="WhatsApp desktop client"
   [swaylock]="lock for sway window manager"
   [sway-screenshot]="screenshot tool for sway"
-  [extension-manager]="3rd party software for installing gnome extenssions"
+  [tree-sitter-cli-git]="needed by lazyvim"
 )
 
 echo Updating Pacman

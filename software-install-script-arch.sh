@@ -14,6 +14,7 @@ declare -A packages=(
   [neovim]="text editor"
   [nerd-fonts]="common special characters"
   [obs-studio]="streaming and recording software"
+  [poppler]="pdf image previes in ranger"
   [qbittorrent]="torrent client"
   [ranger]="terminal file browser"
   [rust]="rustc compiler and cargo"

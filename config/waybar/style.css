@@ -1,79 +1,87 @@
-/* -- Global rules -- */
+/* ===========================
+   COLOR DEFINITIONS (GTK STYLE)
+   =========================== */
+
+/* Backgrounds */
+@define-color bg-panel rgba(30, 34, 48, 0.85); /* slightly brighter panel */
+
+/* Primary blues */
+@define-color blue rgba(0, 140, 255, 0.85); /* neon sky blue */
+@define-color blue-light rgba(90, 180, 255, 0.85); /* softer highlight blue */
+
+/* Accent colors */
+@define-color red-accent rgba(255, 70, 70, 0.85); /* neon red */
+@define-color yellow-connecting rgba(255, 200, 0, 0.85); /* warm amber */
+
+/* Status colors */
+@define-color green-connected rgba(0, 200, 140, 0.85); /* teal-green */
+@define-color red-disconnected @red-accent;
+@define-color yellow-connecting rgba(255, 200, 0, 0.8);
+
+/* Text */
+@define-color text-light #e8ecf0; /* soft white */
+@define-color text-dark #0e0f12; /* deep charcoal */
+
+/* ===========================
+   GLOBAL RULES
+   =========================== */
 * {
   border: none;
   font-family: "JetbrainsMono Nerd Font";
   font-size: 15px;
-  min-height: 10px;
 }
 
-window#waybar {
-  background: rgba(34, 36, 54, 0.4);
+#waybar {
+  background: transparent;
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
-}
-
-/* - Genera rules for visible modules -- */
+/* ===========================
+   GENERAL MODULE RULES
+   =========================== */
 #clock,
 #cpu,
 #memory,
 #pulseaudio,
 #custom-media,
+#custom-pia,
+#custom-power,
 #network {
-  color: #161320;
-  margin-top: 6px;
+  color: @text-dark;
   margin-bottom: 6px;
   padding-left: 10px;
   padding-right: 10px;
   transition: none;
 }
 
-/* -- Specific styles -- */
-
-/* Modules left */
+/* ===========================
+   LEFT MODULES
+   =========================== */
 #clock {
-  background: rgba(88, 175, 221, 0.8);
+  background: @blue-light;
   margin-right: 5px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 #cpu {
-  background: rgba(88, 175, 221, 0.8);
+  background: @blue-light;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
 #custom-media {
-  background-color: rgba(0, 166, 255, 0.8);
-  opacity: 0.7;
-  color: black;
+  background-color: @blue;
   margin-left: 10px;
   border-radius: 10px;
 }
-#memory {
-  background: rgba(63, 126, 161, 0.8);
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
 
-#pulseaudio {
-  border-radius: 10px;
-  margin-right: 20px;
-}
-#disk {
-  background: #f5c2e7;
-}
-
-#temperature {
-  background: #f8bd96;
-}
-
-/* Modules center */
+/* ===========================
+   CENTER MODULES
+   =========================== */
 #workspaces {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  margin: 6px 5px;
+  margin-bottom: 6px;
   padding: 0px 6px;
 }
 
@@ -100,50 +108,46 @@ window#waybar.hidden {
   color: #89b4fa;
 }
 
-/* Modules right */
-#taskbar {
-  background: transparent;
-  border-radius: 10px;
-  padding: 0px 5px;
-  margin: 6px 5px;
-}
-
-#taskbar button {
-  padding: 0px 5px;
-  margin: 0px 3px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-#taskbar button.active {
-  background: rgba(34, 36, 54, 0.5);
-}
-
-#taskbar button:hover {
-  background: rgba(34, 36, 54, 0.5);
-}
-
+/* ===========================
+   RIGHT MODULES
+   =========================== */
 #pulseaudio {
-  color: #1a1826;
-  background: rgba(0, 166, 255, 0.8);
+  color: @text-dark;
+  background: @blue;
+  border-radius: 10px;
 }
-
-#pulseaudio_slider {
-  color: #1a1826;
-  background: rgba(0, 166, 255, 0.8);
-}
-
 #network {
-  background: rgba(0, 166, 255, 0.8);
-  padding-right: 13px;
-  margin-left: 10px;
+  background: @blue-light;
+  padding-right: 20px;
   border-radius: 10px;
   margin-right: 10px;
 }
-/* === Optional animation === */
-@keyframes blink {
-  to {
-    background-color: #bf616a;
-    color: #b5e8e0;
-  }
+
+#custom-pia {
+  color: @text-dark;
+  background: @blue;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Dynamic PIA states */
+#custom-pia.connected {
+  background: @green-connected;
+  color: @text-light;
+}
+
+#custom-pia.disconnected {
+  background: @red-disconnected;
+  color: @text-light;
+}
+#custom-pia.connecting {
+  background: @yellow-connecting;
+  color: @text-dark;
+}
+#custom-power {
+  background: @red-disconnected;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-right: 20px;
 }

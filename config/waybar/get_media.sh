@@ -1,4 +1,4 @@
-media=$(playerctl metadata -f "({{playerName}}) {{artist}} - {{title}}")
+media=$(playerctl metadata -f "{{artist}} - {{title}}")
 player_status=$(playerctl status)
 
 if [[ $player_status = "Playing" ]]; then

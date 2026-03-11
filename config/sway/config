@@ -6,8 +6,6 @@
 # Do note that some of these configs are hard coded for my specific computer
 #
 # Arch Systems
-# sudo pacman -S swaybg playerctl waybar sway swaylock swayidle swaybg kitty rofi dunst
-# yay -S sway-screenshot
 #
 # This config was made for an Arch system
 # ~TheKeijo
@@ -24,8 +22,8 @@ input * {
 ###############################################################################################################
 
 # map Wacom tablet to main display only
-
 input 1386:827:Wacom_Intuos_S_2_Pen map_to_output DP-1
+
 # Set names to workspaces
 set $ws1 "1:1   System "
 set $ws2 "2:2  Browser "
@@ -75,8 +73,6 @@ assign [app_id="com.mozilla.Thunderbird"]  workspace $ws7
 exec_always {
     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
 }
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
 # Notifications via dunst
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc 
 # Disable screensaver
@@ -166,7 +162,7 @@ output DP-1 pos 1920 0 res 2560x1440
 output HDMI-A-1 pos 0 0 res 1920x1080
 #mirror this mothafucka
 output HDMI-A-2 disable
-output * background /home/skula/Pictures/Wallpapers/blue-anime-ocean.png fill
+output * background /home/skula/Pictures/Wallpapers/blue-city-bridge.png fill
 
 ###############################################################################################################
 ############################################ SHORTCUTS ########################################################

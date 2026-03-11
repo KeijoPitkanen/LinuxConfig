@@ -9,15 +9,17 @@
 @define-color blue rgba(0, 140, 255, 0.85); /* neon sky blue */
 @define-color blue-light rgba(90, 180, 255, 0.85); /* softer highlight blue */
 
-/* Accent colors */
-@define-color red-accent rgba(255, 70, 70, 0.85); /* neon red */
-@define-color yellow-connecting rgba(255, 200, 0, 0.85); /* warm amber */
-
 /* Status colors */
 @define-color green-connected rgba(0, 200, 140, 0.85); /* teal-green */
-@define-color red-disconnected @red-accent;
+@define-color red-disconnected rgba(255, 70, 70, 0.85);
 @define-color yellow-connecting rgba(255, 200, 0, 0.8);
 
+/* Hover colors */
+@define-color green-connected-hover rgba(0, 230, 170, 0.95); /* brighter teal-green */
+@define-color red-disconnected-hover rgba(255, 110, 110, 0.95);
+@define-color yellow-connecting-hover rgba(255, 225, 60, 0.9);
+
+@define-color blue-hover rgba(50, 170, 255, 0.95); /* brighter neon sky blue */
 /* Text */
 @define-color text-light #e8ecf0; /* soft white */
 @define-color text-dark #0e0f12; /* deep charcoal */
@@ -29,6 +31,12 @@
   border: none;
   font-family: "JetbrainsMono Nerd Font";
   font-size: 15px;
+}
+* {
+  transition:
+    background-color 0.35s ease-in-out,
+    color 0.35s ease-in-out,
+    opacity 0.35s ease-in-out;
 }
 
 #waybar {
@@ -53,6 +61,15 @@
   transition: none;
 }
 
+#custom-media,
+#pulseaudio,
+#custom-pia,
+#custom-power {
+  transition:
+    background-color 0.35s ease-in-out,
+    color 0.35s ease-in-out,
+    opacity 0.35s ease-in-out;
+}
 /* ===========================
    LEFT MODULES
    =========================== */
@@ -63,16 +80,14 @@
   border-bottom-right-radius: 10px;
 }
 
-#cpu {
-  background: @blue-light;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
 #custom-media {
   background-color: @blue;
   margin-left: 10px;
   border-radius: 10px;
+}
+
+#custom-media:hover {
+  background-color: @blue-hover;
 }
 
 /* ===========================
@@ -112,10 +127,14 @@
    RIGHT MODULES
    =========================== */
 #pulseaudio {
-  color: @text-dark;
   background: @blue;
   border-radius: 10px;
 }
+
+#pulseaudio:hover {
+  background-color: @blue-hover;
+}
+
 #network {
   background: @blue-light;
   padding-right: 20px;
@@ -124,8 +143,6 @@
 }
 
 #custom-pia {
-  color: @text-dark;
-  background: @blue;
   border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
@@ -137,17 +154,27 @@
   color: @text-light;
 }
 
+#custom-pia.connected:hover {
+  background: @green-connected-hover;
+}
+
 #custom-pia.disconnected {
   background: @red-disconnected;
   color: @text-light;
 }
+#custom-pia.disconnected:hover {
+  background: @red-disconnected-hover;
+}
 #custom-pia.connecting {
   background: @yellow-connecting;
-  color: @text-dark;
 }
 #custom-power {
   background: @red-disconnected;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   padding-right: 20px;
+}
+
+#custom-power:hover {
+  background: @red-disconnected-hover;
 }

@@ -44,7 +44,7 @@ declare -A yay_packages=(
   [swayfx]="window mangager"
   [vscodium]="open-source Visual Studio Code alternative"
   [whatsie]="WhatsApp desktop client"
-  [swaylock]="lock for sway window manager"
+  [swaylock-effects]="lock for sway window manager"
   [sway-screenshot]="screenshot tool for sway"
   [tree-sitter-cli-git]="needed by lazyvim"
 )

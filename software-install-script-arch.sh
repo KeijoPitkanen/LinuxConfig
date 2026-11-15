@@ -46,7 +46,7 @@ declare -A yay_packages=(
   [swaylock-effects]="lock for sway window manager"
   [sway-screenshot]="screenshot tool for sway"
   [tree-sitter-cli-git]="needed by lazyvim"
-  [claude-desktop]="A desktop app of claude AI web interface")
+  [claude-desktop]="A desktop app of claude AI web interface"
 )
 
 echo Updating Pacman

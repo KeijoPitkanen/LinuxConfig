@@ -2,11 +2,6 @@
 ###############################################################################################################
 ################################ !!!!!IMPORTANT!!!!!! #########################################################
 ###############################################################################################################
-# Install the following packages first. This config relies on these packages
-# Do note that some of these configs are hard coded for my specific computer
-#
-# Arch Systems
-#
 # This config was made for an Arch system
 # ~TheKeijo
 
@@ -16,6 +11,18 @@ input * {
     xkb_layout "fi"
     xkb_numlock enabled
 }
+###############################################################################################################
+##################################### MONITORS ################################################################
+###############################################################################################################
+
+#Set monitors <!!! this is system specific !!!>
+output DP-1 pos 1920 0 res 2560x1440
+output HDMI-A-1 pos 0 0 res 1920x1080
+#mirror this mothafucka
+output HDMI-A-2 disable
+#Set wallpaper
+output * background /home/skula/Pictures/Wallpapers/blue-city-bridge.png fill
+
 
 ###############################################################################################################
 ###################################### WORKSPACES #############################################################
@@ -27,9 +34,9 @@ input 1386:827:Wacom_Intuos_S_2_Pen map_to_output DP-1
 # Set names to workspaces
 set $ws1 "1:1   System "
 set $ws2 "2:2  Browser "
-set $ws3 "3:3  Browser "
-set $ws4 "4:4  Code "
-set $ws5 "5:5  Steam "
+set $ws3 "3:3  Code "
+set $ws4 "4:4  Steam "
+set $ws5 "5:5  Browser"
 set $ws6 "6:6  Spotify/ Browser " 
 set $ws7 "7:7  Whatsapp "
 set $ws8 "8:8  File Browser "
@@ -59,8 +66,8 @@ workspace $ws8 output HDMI-A-1
 assign [class="privateinternetaccess"] workspace $ws1
 assign [app_id="org.qbittorrent.qBittorrent"] workspace $ws1
 assign [class="pio.missioncenter.MissionCenter"] workspace $ws1
-assign [class="steam"]  workspace $ws5
-assign [app_id="spotify"] workspace $ws6
+assign [class="steam"]  workspace $ws4
+assign [class="Spotify"] workspace $ws6
 assign [app_id="com.ktechpit.whatsie"]  workspace $ws7
 assign [class="discord"]  workspace $ws7
 assign [app_id="com.mozilla.Thunderbird"]  workspace $ws7
@@ -152,17 +159,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
-###############################################################################################################
-##################################### MONITORS ################################################################
-###############################################################################################################
-
-#Set monitors <!!! this is system specific !!!>
-output DP-1 pos 1920 0 res 2560x1440
-output HDMI-A-1 pos 0 0 res 1920x1080
-#mirror this mothafucka
-output HDMI-A-2 disable
-output * background /home/skula/Pictures/Wallpapers/blue-city-bridge.png fill
 
 ###############################################################################################################
 ############################################ SHORTCUTS ########################################################

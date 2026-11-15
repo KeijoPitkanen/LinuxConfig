@@ -1,12 +1,11 @@
 declare -A packages=(
   [bleachbit]="system cleaner"
   [calcurse]="terminal calendar"
-  [clamav]="Anti virus software"
   [fastfetch]="terminal system info tool"
   [fzf]="fuzzy finder"
   [gedit]="text editor"
   [discord]="communication platform"
-  [gedit]="Sway notifications handler"
+  [dunst]="Sway notifications handler"
   [gnome]="desktop environment"
   [jellyfin-web]="media server web interface"
   [kitty]="terminal emulator"
@@ -47,6 +46,7 @@ declare -A yay_packages=(
   [swaylock]="lock for sway window manager"
   [sway-screenshot]="screenshot tool for sway"
   [tree-sitter-cli-git]="needed by lazyvim"
+  [claude-desktop]="A desktop app of claude AI web interface")
 )
 
 echo Updating Pacman
